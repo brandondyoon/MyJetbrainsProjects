@@ -16,6 +16,19 @@ public class DataStructures2D {
         System.out.println("Sum of grid: " + DataStructures2D.sumInts(numberGrid));
 
         int[][] copyOfMatrix = DataStructures2D.makeCopy(raggedArray);
+
+        ArrayList<ArrayList<Integer>> test = new ArrayList<ArrayList<Integer>>();
+        for(int i = 0; i < numberGrid.length; i++)
+        {
+            test.add(new ArrayList<Integer>(numberGrid[i].length));
+            for(int j = 0; j < numberGrid[i].length; j++)
+            {
+                test.get(i).add(numberGrid[i][j]);
+            }
+        }
+        ArrayList<ArrayList<Integer>> newCopy = DataStructures2D.makeCopy(test);
+        System.out.println("Sum of grid: " + DataStructures2D.sumInts(newCopy));
+
         DataStructures2D.printOut(copyOfMatrix);
     }
 
@@ -82,10 +95,10 @@ public class DataStructures2D {
         ArrayList<ArrayList<Integer>> retval = new ArrayList<ArrayList<Integer>>(orig.size());
         for(int i = 0; i < orig.size(); i++)
         {
-            retval.set(i, new ArrayList<Integer>(orig.get(i).size()));
-            for(int j = 0; j < retval.get(i).size(); j++)
+            retval.add(i, new ArrayList<Integer>());
+            for(int j = 0; j < orig.get(i).size(); j++)
             {
-                retval.get(i).set(j, orig.get(i).get(j));
+                retval.get(i).add(j, orig.get(i).get(j));
             }
         }
         return retval;
