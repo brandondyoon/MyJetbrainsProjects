@@ -1,10 +1,14 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// Honestly the whole nomenclature of this class is disastrous and definitely deserves a refactoring,
+// but it works and I'm sick of doing this shit - so let's move on.
+
 public class DataStructures2D {
     public DataStructures2D()
     {
         int[][] raggedArray = DataStructures2D.bigRaggedArray(50);
+        System.out.println("Printing a big ragged array");
         DataStructures2D.printOut(raggedArray);
 
         int[][] numberGrid = {
@@ -16,20 +20,23 @@ public class DataStructures2D {
         System.out.println("Sum of grid: " + DataStructures2D.sumInts(numberGrid));
 
         int[][] copyOfMatrix = DataStructures2D.makeCopy(raggedArray);
+        System.out.println("Made copy of matrix. Printing out");
+        DataStructures2D.printOut(copyOfMatrix);
 
-        ArrayList<ArrayList<Integer>> test = new ArrayList<ArrayList<Integer>>();
+        System.out.println("Making previous Array^2 into ArrayList^2...");
+        ArrayList<ArrayList<Integer>> ALGrid = new ArrayList<ArrayList<Integer>>();
         for(int i = 0; i < numberGrid.length; i++)
         {
-            test.add(new ArrayList<Integer>(numberGrid[i].length));
+            ALGrid.add(new ArrayList<Integer>(numberGrid[i].length));
             for(int j = 0; j < numberGrid[i].length; j++)
             {
-                test.get(i).add(numberGrid[i][j]);
+                ALGrid.get(i).add(numberGrid[i][j]);
             }
         }
-        ArrayList<ArrayList<Integer>> newCopy = DataStructures2D.makeCopy(test);
+        ArrayList<ArrayList<Integer>> newCopy = DataStructures2D.makeCopy(ALGrid);
         System.out.println("Sum of grid: " + DataStructures2D.sumInts(newCopy));
-
-        DataStructures2D.printOut(copyOfMatrix);
+        System.out.println("Printing out ArrayList^2");
+        DataStructures2D.printOut(ALGrid);
     }
 
     public static void printOut(int[][] matrix)
@@ -102,5 +109,18 @@ public class DataStructures2D {
             }
         }
         return retval;
+    }
+
+    public static void printOut(ArrayList<ArrayList<Integer>> ALgrid)
+    {
+        for(int i = 0; i < ALgrid.size(); i++)
+        {
+            System.out.print(i + ": ");
+            for(int j = 0; j < ALgrid.get(i).size(); j++)
+            {
+                System.out.print(j + ", ");
+            }
+            System.out.println("");
+        }
     }
 }
