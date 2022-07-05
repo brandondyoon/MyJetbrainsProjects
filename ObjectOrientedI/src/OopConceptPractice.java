@@ -103,35 +103,6 @@ public class OopConceptPractice {
         } while(whiskers.getLives() != 0);
     }
 
-    public void problem3()
-    {
-        StringBuffer myArr[] = new StringBuffer[10];
-        for(int i = 0; i < 10; i++)
-        {
-            myArr
-        }
-    }
-
-    public StringBuffer[] refCopy(StringBuffer[] arr)
-    {
-        StringBuffer[] copy = arr;
-        return copy;
-    }
-
-    public StringBuffer[] shallowCopy(StringBuffer[] arr)
-    {
-        StringBuffer[] copy = new StringBuffer[arr.length];
-        for(int i = 0; i < copy.length; i++)
-            copy[i] = arr[i];
-    }
-
-    public StringBuffer[] deepCopy(StringBuffer[] arr)
-    {
-        StringBuffer[] copy = new StringBuffer[arr.length];
-        for(int i = 0; i < copy.length; i++)
-            copy[i] = new StringBuffer(arr[i]);
-    }
-
     public OopConceptPractice()
     {
         //problem1();
