@@ -47,7 +47,7 @@ public class RefsAndMuts {
         System.out.print("SB: ");
         for(int i = 0; i < arr.length; i++)
         {
-            System.out.print("`" + i + "`, ");
+            System.out.print("`" + arr[i] + "`, ");
         }
         System.out.println("");
     }

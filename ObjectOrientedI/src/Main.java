@@ -19,6 +19,9 @@ public class Main {
         // OopConceptPractice conceptPractice = new OopConceptPractice();
 
         // Mutable-vs-Immutable types, Reference/Shallow/Deep Copies of Arrays Practice Problems
-        RefsAndMuts refPractice = new RefsAndMuts();
+        // RefsAndMuts refPractice = new RefsAndMuts();
+
+        // Exception Handling Practice Problems
+        ExceptionHandling exhan = new ExceptionHandling();
     }
 }
